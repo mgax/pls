@@ -1,0 +1,3 @@
+#!/bin/bash -ex
+killall franz || true
+nohup franz > /dev/null &

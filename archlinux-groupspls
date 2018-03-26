@@ -1,0 +1,4 @@
+echo /etc/group
+cat /etc/group | cut -f 1 -d : | sort | uniq -dc
+echo /etc/gshadow
+cat /etc/gshadow | cut -f 1 -d : | sort | uniq -dc

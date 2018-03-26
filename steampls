@@ -1,0 +1,2 @@
+#!/bin/bash -ex
+vblank_mode=0 primusrun steam

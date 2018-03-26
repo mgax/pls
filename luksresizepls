@@ -1,0 +1,18 @@
+#!/bin/bash
+
+pvdisplay
+echo partition?
+read PART
+pvdisplay $PART
+pvresize $PART
+
+vgdisplay
+lvdisplay
+echo lv?
+read LV
+lvresize -l 100%_VG $LV
+
+echo luks?
+read LUKS
+cryptsetup resize $LUKS
+resize2fs $LUKS
