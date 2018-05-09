@@ -1,0 +1,6 @@
+#!/bin/bash -x
+
+docker kill $(docker ps -q)
+docker rm $(docker ps -a -q)
+docker rmi $(docker images -a -q)
+docker volume rm $(docker volume ls -q)
