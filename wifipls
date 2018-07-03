@@ -1,0 +1,5 @@
+#!/bin/bash -ex
+
+rfkill block wlan
+sleep 2
+rfkill unblock wlan
