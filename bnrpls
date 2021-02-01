@@ -9,6 +9,7 @@ Usage:
 import sys
 from urllib.request import urlopen
 import re
+import argparse
 
 def curs(moneda):
     with urlopen('https://bnr.ro/Home.aspx') as f:
@@ -17,7 +18,11 @@ def curs(moneda):
         return match.group(1)
 
 def main():
-    rata = curs('EUR')
+    parser = argparse.ArgumentParser()
+    parser.add_argument("moneda", nargs="?", default="EUR")
+    options = parser.parse_args()
+
+    rata = curs(options.moneda)
 
     if sys.stdout.isatty():
         print(rata)
